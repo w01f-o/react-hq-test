@@ -11,7 +11,7 @@
 }
 
 #root {
-  @apply flex h-screen flex-col text-white antialiased;
+  @apply flex h-svh flex-col text-white antialiased;
 }
 
 body {
