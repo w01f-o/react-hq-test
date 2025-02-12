@@ -1,3 +1,4 @@
+import { Button } from '@/shared/ui';
 import clsx from 'clsx';
 import { FC } from 'react';
 
@@ -9,7 +10,12 @@ const spanPosition: Record<number, string> = {
 
 export const BurgerButton: FC = () => {
   return (
-    <button className="relative h-6 w-[35px]">
+    <Button
+      className="relative h-6 w-[35px]"
+      title="Menu"
+      aria-label="Open menu"
+      variant="light"
+    >
       {Array.from({ length: 3 }, (_, i) => (
         <span
           key={i}
@@ -19,6 +25,6 @@ export const BurgerButton: FC = () => {
           )}
         ></span>
       ))}
-    </button>
+    </Button>
   );
 };
