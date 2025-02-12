@@ -1,0 +1,1 @@
+export { validateChildrenByComponent } from './validateChildrenByComponent';
