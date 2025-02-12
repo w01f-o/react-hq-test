@@ -1,50 +1,14 @@
-# React + TypeScript + Vite
+## Тестовое задание для front-end разработчика
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Задание максимально приближена к реальным задачам, которыми предстоит заниматься front-end разработчику в нашей компании.
 
-Currently, two official plugins are available:
+* Задача: нужно сверстать [один экран приложения](../frontend/layout_preview.png) на основе React-компонентов (React или ReactNative не принципиально).
+* При изменении интервала (24 часа, 7 дней, 30 дней, все время) нужно изменять показатели доходности ботов (проценты), используя данные из [json-файла](../frontend/src).
+* Чтобы данные не исчезали при обновлении страницы, нужно сохранять их в localStorage.
+* Браузер: запускать будем на iPhone 6S (Safari Mobile) и Samsung S8 Plus (Chrome). Нужно адаптировать страницу, чтобы на этих устройствах отсутствовал вертикальный и горизонтальный скролл, оно было полностью вписано в один экран браузера.
+* Шрифт можно использовать Roboto или Open-Sans
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Дополнительно (не обязательно):
+* При переключении ботов (оранжевый, красный, желтый, зеленый, голубой) перерисовывать график случайным образом
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Оценивать будем качество кода и качество отображения приложения в мобильных браузерах.

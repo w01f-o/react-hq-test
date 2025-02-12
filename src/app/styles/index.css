@@ -4,4 +4,11 @@
 
 @theme {
   --font-sans: 'Open Sans', serif;
+
+  --color-blue: #1d2637;
+  --color-blue-light: #1e3350;
+}
+
+#root {
+  @apply bg-blue min-h-screen text-white antialiased;
 }
