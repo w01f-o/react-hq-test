@@ -1,13 +1,10 @@
 import { FC } from 'react';
+import { BurgerButton } from './BurgerButton';
 
 export const BurgerMenu: FC = () => {
   return (
-    <div>
-      <button>
-        {Array.from({ length: 3 }, (_, i) => (
-          <span key={i}></span>
-        ))}
-      </button>
+    <div className="flex">
+      <BurgerButton />
     </div>
   );
 };

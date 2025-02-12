@@ -8,7 +8,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
     <>
       <BlurredSpot />
       <Header />
-      {children}
+      <main className="flex-grow">{children}</main>
       <Navbar />
     </>
   );

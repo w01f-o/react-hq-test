@@ -10,5 +10,9 @@
 }
 
 #root {
-  @apply bg-blue min-h-screen text-white antialiased;
+  @apply bg-blue flex min-h-screen flex-col text-white antialiased;
+}
+
+button {
+  @apply cursor-pointer;
 }
