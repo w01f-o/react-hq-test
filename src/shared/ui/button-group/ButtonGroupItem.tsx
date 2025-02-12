@@ -4,21 +4,18 @@ import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 interface ButtonGroupItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   isActive?: boolean;
-  rounded?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
 }
 
 export const ButtonGroupItem: FC<ButtonGroupItemProps> = ({
   children,
   className,
   isActive,
-  rounded,
   ...props
 }) => {
   return (
     <button
       className={clsx(
-        'w-18 border-1 py-1.5 text-sm font-semibold transition-opacity',
-        `rounded-${rounded ?? 'full'}`,
+        'w-18 rounded-full border-1 py-1.5 text-sm font-semibold transition-opacity',
         className,
         {
           'opacity-30': !isActive,
