@@ -1,21 +1,21 @@
 import { appRoutes, RoutePaths } from '@/shared/router';
-import { Button } from '@/shared/ui';
-import clsx from 'clsx';
 import {
-  Activity,
-  Bitcoin,
-  ChartNoAxesCombined,
-  List,
-  ShoppingCart,
-} from 'lucide-react';
+  BotMarketIcon,
+  Button,
+  CoinPricesIcons,
+  DashboardIcon,
+  MegabotIcon,
+  ProfileIcon,
+} from '@/shared/ui';
+import clsx from 'clsx';
 import { FC, ReactNode, useState } from 'react';
 
 const icons: Record<RoutePaths, ReactNode> = {
-  '/': <List />,
-  '/market': <ChartNoAxesCombined />,
-  '/megabot': <ShoppingCart />,
-  '/prices': <Bitcoin />,
-  '/profile': <Activity />,
+  '/': <DashboardIcon />,
+  '/market': <BotMarketIcon />,
+  '/megabot': <MegabotIcon />,
+  '/prices': <CoinPricesIcons />,
+  '/profile': <ProfileIcon />,
 };
 
 export const Navbar: FC = () => {
