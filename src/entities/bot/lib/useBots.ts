@@ -24,8 +24,8 @@ export const useBots = create<BotsStore>()(
     set => ({
       ...initialState,
       setCurrentTimeRange: timeRange => () =>
-        set({ currentTimeRange: timeRange }),
-      setCurrentBot: bot => () => set({ currentBot: bot }),
+        set(prev => ({ ...prev, currentTimeRange: timeRange })),
+      setCurrentBot: bot => () => set(prev => ({ ...prev, currentBot: bot })),
     }),
     { name: 'bots_store' }
   )

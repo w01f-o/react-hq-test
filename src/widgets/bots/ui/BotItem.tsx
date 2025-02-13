@@ -1,5 +1,6 @@
 import { Bot } from '@/entities/bot';
 import { useBots } from '@/entities/bot/lib/useBots';
+import { Profitability } from '@/shared/ui/profitability';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { BotIcon } from './BotIcon';
@@ -18,16 +19,13 @@ const botNames: Record<string, string> = {
 };
 
 export const BotItem: FC<BotItemProps> = ({ item }) => {
-  const currentTimeRange = useBots(state => state.currentTimeRange);
-  const profitableness = item[currentTimeRange];
-
   const currentBot = useBots(state => state.currentBot);
   const setCurrentBot = useBots(state => state.setCurrentBot);
 
   return (
     <button
       className={clsx(
-        'bg-blue-light-secondary flex size-40 flex-col items-center justify-center gap-2 rounded-md leading-none transition-shadow',
+        'bg-blue-light-secondary flex size-[31vw] flex-col items-center justify-center gap-2 rounded-md leading-none uppercase transition-shadow',
         {
           'shadow-[inset_0px_0px_38px_20px_#283750]': item.name === currentBot,
         }
@@ -36,15 +34,7 @@ export const BotItem: FC<BotItemProps> = ({ item }) => {
     >
       <BotIcon name={item.name} />
       <div>{botNames[item.name] ?? item.name}</div>
-      <div
-        className={clsx({
-          'text-green-500': profitableness > 0,
-          'text-red-500': profitableness < 0,
-        })}
-      >
-        {profitableness > 0 ? '+' : ''}
-        {item[currentTimeRange]}%
-      </div>
+      <Profitability bot={item} />
     </button>
   );
 };

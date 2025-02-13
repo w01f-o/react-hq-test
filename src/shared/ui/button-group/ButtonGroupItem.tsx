@@ -15,7 +15,7 @@ export const ButtonGroupItem: FC<ButtonGroupItemProps> = ({
   return (
     <button
       className={clsx(
-        'w-18 rounded-full border-1 py-1.5 text-sm font-semibold transition-opacity',
+        'w-18 rounded-full border-1 py-1.5 font-semibold transition-opacity',
         className,
         {
           'opacity-30': !isActive,
