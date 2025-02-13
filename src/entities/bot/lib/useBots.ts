@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { AvailableTimeRange } from '../model';
 
 interface BotsState {
@@ -18,8 +19,14 @@ const initialState: BotsState = {
   currentBot: 'yellow_bot',
 };
 
-export const useBots = create<BotsStore>(set => ({
-  ...initialState,
-  setCurrentTimeRange: timeRange => () => set({ currentTimeRange: timeRange }),
-  setCurrentBot: bot => () => set({ currentBot: bot }),
-}));
+export const useBots = create<BotsStore>()(
+  persist(
+    set => ({
+      ...initialState,
+      setCurrentTimeRange: timeRange => () =>
+        set({ currentTimeRange: timeRange }),
+      setCurrentBot: bot => () => set({ currentBot: bot }),
+    }),
+    { name: 'bots_store' }
+  )
+);
