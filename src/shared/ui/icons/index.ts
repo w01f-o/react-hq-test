@@ -1,5 +1,5 @@
-export { BotMarketIcon } from './BotMarketIcon';
-export { CoinPricesIcons } from './CoinPricesIcons';
+export { ChartIcon } from './ChartIcon';
+export { CoinIcon } from './CoinIcon';
 export { DashboardIcon } from './DashboardIcon';
-export { MegabotIcon } from './MegabotIcon';
-export { ProfileIcon } from './ProfileIcon';
+export { MarketIcon } from './MarketIcon';
+export { SettingsIcon } from './SettingsIcon';

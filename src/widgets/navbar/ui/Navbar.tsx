@@ -1,21 +1,21 @@
 import { appRoutes, RoutePaths } from '@/shared/router';
 import {
-  BotMarketIcon,
   Button,
-  CoinPricesIcons,
+  ChartIcon,
+  CoinIcon,
   DashboardIcon,
-  MegabotIcon,
-  ProfileIcon,
+  MarketIcon,
+  SettingsIcon,
 } from '@/shared/ui';
 import clsx from 'clsx';
 import { FC, ReactNode, useState } from 'react';
 
 const icons: Record<RoutePaths, ReactNode> = {
   '/': <DashboardIcon />,
-  '/market': <BotMarketIcon />,
-  '/megabot': <MegabotIcon />,
-  '/prices': <CoinPricesIcons />,
-  '/profile': <ProfileIcon />,
+  '/market': <MarketIcon />,
+  '/megabot': <ChartIcon />,
+  '/prices': <CoinIcon />,
+  '/profile': <SettingsIcon />,
 };
 
 export const Navbar: FC = () => {

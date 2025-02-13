@@ -1,11 +1,11 @@
 export { Button } from './button';
 export { ButtonGroup, ButtonGroupItem } from './button-group';
 export {
-  BotMarketIcon,
-  CoinPricesIcons,
+  ChartIcon,
+  CoinIcon,
   DashboardIcon,
-  MegabotIcon,
-  ProfileIcon,
+  MarketIcon,
+  SettingsIcon,
 } from './icons';
 export { Layout } from './layout';
 export { Heading } from './text';

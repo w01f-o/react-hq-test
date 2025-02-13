@@ -1,8 +1,8 @@
 import { FC, SVGProps } from 'react';
 
-type BotMarketIconProps = SVGProps<SVGSVGElement>;
+type MarketIconProps = SVGProps<SVGSVGElement>;
 
-export const BotMarketIcon: FC<BotMarketIconProps> = ({ ...props }) => {
+export const MarketIcon: FC<MarketIconProps> = ({ ...props }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" {...props}>
       <path
