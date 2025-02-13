@@ -11,6 +11,7 @@ import {
   Line,
   ResponsiveContainer,
 } from 'recharts';
+import './custom-legend.css';
 
 const legend = ['22.04', '23.04', '24.04', '25.04', '26.04'];
 const data = [
@@ -48,7 +49,7 @@ export const TradingChart: FC = () => {
   const currentBot = useBots(state => state.currentBot);
 
   return (
-    <div className="relative flex flex-grow items-center overflow-hidden">
+    <div className="relative flex flex-grow items-center overflow-hidden py-2">
       <ResponsiveContainer className="max-h-[300px] scale-110">
         <ComposedChart data={data}>
           <CartesianGrid
@@ -58,6 +59,10 @@ export const TradingChart: FC = () => {
           <Legend
             payload={legend.map(d => ({ name: d, value: d }))}
             iconSize={0}
+            wrapperStyle={{
+              fontSize: 14,
+              opacity: 0.5,
+            }}
           />
           <Area
             type="monotone"
