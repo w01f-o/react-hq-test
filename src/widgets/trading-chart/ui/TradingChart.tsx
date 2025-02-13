@@ -1,8 +1,7 @@
 import { botData } from '@/entities/bot';
 import { useBots } from '@/entities/bot/lib/useBots';
-import { botColors } from '@/shared/config';
 import { Profitability } from '@/shared/ui/profitability';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import {
   Area,
   CartesianGrid,
@@ -14,7 +13,7 @@ import {
 import './custom-legend.css';
 
 const legend = ['22.04', '23.04', '24.04', '25.04', '26.04'];
-const data = [
+const initialChardValue = [
   { value: 60 },
   { value: 60 },
   { value: 57 },
@@ -47,11 +46,21 @@ const data = [
 
 export const TradingChart: FC = () => {
   const currentBot = useBots(state => state.currentBot);
+  const [chartValue, setChartValue] =
+    useState<{ value: number }[]>(initialChardValue);
+
+  useEffect(() => {
+    setChartValue(prev =>
+      prev.map(() => ({
+        value: Math.floor(Math.random() * 85),
+      }))
+    );
+  }, [currentBot]);
 
   return (
     <div className="relative flex flex-grow items-center overflow-hidden py-2">
       <ResponsiveContainer className="max-h-[300px] scale-110">
-        <ComposedChart data={data}>
+        <ComposedChart data={chartValue}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="rgba(31, 76, 128, 0.5)"
@@ -74,22 +83,14 @@ export const TradingChart: FC = () => {
           <Line
             type="monotone"
             dataKey="value"
-            stroke={botColors[currentBot]}
+            stroke={'#2175cd'}
             dot={false}
             strokeWidth={2}
           />
           <defs>
             <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-              <stop
-                offset="0%"
-                stopColor={botColors[currentBot]}
-                stopOpacity={1}
-              />
-              <stop
-                offset="100%"
-                stopColor={botColors[currentBot]}
-                stopOpacity={0}
-              />
+              <stop offset="0%" stopColor={'#1f4e83'} stopOpacity={1} />
+              <stop offset="100%" stopColor={'#1f4e83'} stopOpacity={0} />
             </linearGradient>
           </defs>
         </ComposedChart>
