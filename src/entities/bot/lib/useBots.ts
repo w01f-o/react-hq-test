@@ -16,7 +16,7 @@ type BotsStore = BotsState & BotsActions;
 
 const initialState: BotsState = {
   currentTimeRange: 'all_time',
-  currentBot: 'yellow_bot',
+  currentBot: 'blue_bot',
 };
 
 export const useBots = create<BotsStore>()(

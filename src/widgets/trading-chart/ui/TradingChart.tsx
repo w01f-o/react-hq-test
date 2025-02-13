@@ -48,11 +48,8 @@ export const TradingChart: FC = () => {
   const currentBot = useBots(state => state.currentBot);
 
   return (
-    <div
-      className="relative flex flex-grow items-center overflow-hidden"
-      style={{ width: '100%', height: '300px' }}
-    >
-      <ResponsiveContainer className="scale-110" width="100%" height="70%">
+    <div className="relative flex flex-grow items-center overflow-hidden">
+      <ResponsiveContainer className="max-h-[300px] scale-110">
         <ComposedChart data={data}>
           <CartesianGrid
             strokeDasharray="3 3"
