@@ -6,11 +6,12 @@ export const validateChildrenByComponent = (
 ): void | never => {
   Children.toArray(children).forEach(child => {
     if (isValidElement(child) && child.type !== allowedComponent) {
-      throw new Error(
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        `Invalid children, allowed only ${allowedComponent.name}`
-      );
+      const componentName =
+        typeof allowedComponent === 'string'
+          ? allowedComponent
+          : allowedComponent.name || allowedComponent.displayName;
+
+      throw new Error(`Invalid children, allowed only ${componentName}`);
     }
   });
 };

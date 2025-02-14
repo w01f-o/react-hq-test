@@ -1,6 +1,5 @@
-import { Bot } from '@/entities/bot';
-import { useBots } from '@/entities/bot/lib/useBots';
-import { Profitability } from '@/shared/ui/profitability';
+import { Bot, useBots } from '@/entities/bot';
+import { Profitability } from '@/shared/ui';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { BotIcon } from './BotIcon';

@@ -1,5 +1,5 @@
 import { botData } from '@/entities/bot';
-import { HCoinIcon } from '@/shared/ui/icons/HCoinIcon';
+import { HCoinIcon } from '@/shared/ui';
 import { FC } from 'react';
 
 export const TradingInfo: FC = () => {

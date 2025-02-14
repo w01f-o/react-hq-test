@@ -1,5 +1,4 @@
-import { AvailableTimeRange } from '@/entities/bot';
-import { useBots } from '@/entities/bot/lib/useBots';
+import { AvailableTimeRange, useBots } from '@/entities/bot';
 import { ButtonGroup, ButtonGroupItem } from '@/shared/ui';
 import { FC } from 'react';
 

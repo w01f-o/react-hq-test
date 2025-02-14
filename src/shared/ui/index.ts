@@ -4,8 +4,9 @@ export {
   ChartIcon,
   CoinIcon,
   DashboardIcon,
+  HCoinIcon,
   MarketIcon,
   SettingsIcon,
 } from './icons';
 export { Layout } from './layout';
-export { Heading } from './text';
+export { Profitability } from './profitability';

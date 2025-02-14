@@ -1,4 +1,4 @@
-import { BotList } from '@/widgets/bots/ui';
+import { BotList } from '@/widgets/bots';
 import { TimeRange } from '@/widgets/time-range';
 import { TradingChart } from '@/widgets/trading-chart';
 import { TradingInfo } from '@/widgets/trading-info';

@@ -1,6 +1,5 @@
-import { botData } from '@/entities/bot';
-import { useBots } from '@/entities/bot/lib/useBots';
-import { Profitability } from '@/shared/ui/profitability';
+import { botData, useBots } from '@/entities/bot';
+import { Profitability } from '@/shared/ui';
 import { FC, useEffect, useState } from 'react';
 import {
   Area,

@@ -1,2 +1,3 @@
 export { botData } from './config';
-export type { Bot, BotData, AvailableTimeRange } from './model';
+export { useBots } from './lib';
+export type { AvailableTimeRange, Bot, BotData } from './model';

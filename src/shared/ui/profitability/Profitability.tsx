@@ -1,5 +1,4 @@
-import { Bot } from '@/entities/bot';
-import { useBots } from '@/entities/bot/lib/useBots';
+import { Bot, useBots } from '@/entities/bot';
 import clsx from 'clsx';
 import { FC } from 'react';
 

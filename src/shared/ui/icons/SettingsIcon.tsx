@@ -1,4 +1,4 @@
-import { ReactPortal } from '@/shared/lib/ReactPortal';
+import { ReactPortal } from '@/shared/lib';
 import { FC, SVGProps, useEffect, useRef, useState } from 'react';
 
 type SettingsIconProps = SVGProps<SVGSVGElement>;
