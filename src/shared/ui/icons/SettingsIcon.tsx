@@ -45,7 +45,7 @@ export const SettingsIcon: FC<SettingsIconProps> = ({ ...props }) => {
       {notificationPosition && (
         <ReactPortal>
           <span
-            className="absolute grid size-6 place-items-center rounded-full bg-orange-500 leading-none"
+            className="absolute grid size-5 place-items-center rounded-full bg-orange-500 text-sm leading-none min-[410px]:size-6 min-[410px]:text-[16px]"
             style={{
               top: notificationPosition.y,
               left: notificationPosition.x,
