@@ -31,8 +31,8 @@ export const BotItem: FC<BotItemProps> = ({ item }) => {
       )}
       onClick={setCurrentBot(item.name)}
     >
-      <div className="flex size-[80%] flex-col items-center justify-center gap-1">
-        <div className="flex flex-grow items-end">
+      <div className="flex size-[75%] flex-col items-center justify-center gap-1">
+        <div className="flex flex-grow items-center">
           <BotIcon name={item.name} />
         </div>
         <div className="flex flex-grow flex-col justify-end gap-1 font-semibold">
