@@ -24,7 +24,7 @@ export const BotItem: FC<BotItemProps> = ({ item }) => {
   return (
     <button
       className={clsx(
-        'bg-blue-light-secondary flex size-[31vw] flex-col items-center justify-center gap-2 rounded-md text-sm leading-none uppercase transition-shadow min-[410px]:text-lg lg:size-42',
+        'bg-blue-light-secondary flex size-[31vw] flex-col items-center justify-end gap-2 rounded-md pb-3 text-sm leading-none uppercase transition-shadow min-[410px]:text-lg lg:size-42',
         {
           'shadow-[inset_0px_0px_38px_20px_#283750]': item.name === currentBot,
         }
