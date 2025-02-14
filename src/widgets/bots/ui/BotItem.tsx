@@ -24,16 +24,18 @@ export const BotItem: FC<BotItemProps> = ({ item }) => {
   return (
     <button
       className={clsx(
-        'bg-blue-light-secondary flex size-[31vw] flex-col items-center justify-end gap-2 rounded-md pb-3 text-sm leading-none uppercase transition-shadow min-[410px]:text-lg lg:size-42',
+        'bg-blue-light-secondary size-[31vw] rounded-md text-sm leading-none uppercase transition-shadow min-[410px]:text-lg lg:size-42',
         {
           'shadow-[inset_0px_0px_38px_20px_#283750]': item.name === currentBot,
         }
       )}
       onClick={setCurrentBot(item.name)}
     >
-      <BotIcon name={item.name} />
-      <div>{botNames[item.name] ?? item.name}</div>
-      <Profitability bot={item} />
+      <div className="flex h-2/3 flex-col items-center justify-end gap-1">
+        <BotIcon name={item.name} />
+        <div>{botNames[item.name] ?? item.name}</div>
+        <Profitability bot={item} />
+      </div>
     </button>
   );
 };
