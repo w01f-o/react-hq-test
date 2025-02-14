@@ -14,17 +14,20 @@ export const SettingsIcon: FC<SettingsIconProps> = ({ ...props }) => {
     const wrapperEl = wrapper.current;
     if (!wrapperEl) return;
 
+    const leftOffset: number = 16;
+    const topOffset: number = 12;
+
     const wrapperRect = wrapperEl.getBoundingClientRect();
     setNotificationPosition({
-      x: wrapperRect.left + 12,
-      y: wrapperRect.top - 12,
+      x: wrapperRect.left + leftOffset,
+      y: wrapperRect.top - topOffset,
     });
 
     const resizeObserver = new ResizeObserver(() => {
       const wrapperRect = wrapperEl.getBoundingClientRect();
       setNotificationPosition({
-        x: wrapperRect.left + 12,
-        y: wrapperRect.top - 12,
+        x: wrapperRect.left + leftOffset,
+        y: wrapperRect.top - topOffset,
       });
     });
 
