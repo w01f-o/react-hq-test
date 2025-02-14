@@ -11,13 +11,26 @@ export const SettingsIcon: FC<SettingsIconProps> = ({ ...props }) => {
   } | null>(null);
 
   useEffect(() => {
-    const wrapperRect = wrapper.current?.getBoundingClientRect();
-    if (wrapperRect) {
+    const wrapperEl = wrapper.current;
+    if (!wrapperEl) return;
+
+    const wrapperRect = wrapperEl.getBoundingClientRect();
+    setNotificationPosition({
+      x: wrapperRect.left + 12,
+      y: wrapperRect.top - 12,
+    });
+
+    const resizeObserver = new ResizeObserver(() => {
+      const wrapperRect = wrapperEl.getBoundingClientRect();
       setNotificationPosition({
         x: wrapperRect.left + 12,
         y: wrapperRect.top - 12,
       });
-    }
+    });
+
+    resizeObserver.observe(document.body);
+
+    return () => resizeObserver.disconnect();
   }, []);
 
   return (

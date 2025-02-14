@@ -11,7 +11,7 @@ const spanPosition: Record<number, string> = {
 export const BurgerButton: FC = () => {
   return (
     <Button
-      className="relative h-6 w-[35px]"
+      className="relative h-4 w-[30px]"
       title="Menu"
       aria-label="Open menu"
       variant="light"

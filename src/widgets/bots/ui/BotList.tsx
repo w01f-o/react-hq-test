@@ -4,7 +4,7 @@ import { BotItem } from './BotItem';
 
 export const BotList: FC = () => {
   return (
-    <div className="mb-6 flex flex-wrap justify-center gap-0.5">
+    <div className="mt-1 mb-4 flex flex-wrap justify-center gap-0.5">
       {botData.bots.map(bot => (
         <BotItem key={bot.name} item={bot} />
       ))}

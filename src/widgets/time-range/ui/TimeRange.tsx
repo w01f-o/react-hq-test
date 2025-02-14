@@ -17,13 +17,13 @@ export const TimeRange: FC = () => {
   const setCurrentTimeRange = useBots(state => state.setCurrentTimeRange);
 
   return (
-    <div className="mb-4 flex items-center justify-center gap-3 whitespace-nowrap">
-      Time Range:
+    <div className="mb-4 flex items-center justify-center gap-2 px-4 whitespace-nowrap">
+      <span className="text-sm min-[410px]:text-[16px]">Time Range:</span>
       <ButtonGroup>
         {timeRanges.map(timeFrame => (
           <ButtonGroupItem
             key={timeFrame}
-            isActive={timeFrame === currentTimeRange}
+            isUnActive={timeFrame !== currentTimeRange}
             onClick={setCurrentTimeRange(timeFrame)}
           >
             {timeRangeNames[timeFrame] ?? timeFrame}

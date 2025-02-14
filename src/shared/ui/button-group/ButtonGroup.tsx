@@ -15,7 +15,7 @@ export const ButtonGroup: FC<ButtonGroupProps> = ({
   validateChildrenByComponent(children, ButtonGroupItem);
 
   return (
-    <div className={clsx('flex flex-wrap gap-2', className)} {...props}>
+    <div className={clsx('flex gap-1 min-[410px]:gap-2', className)} {...props}>
       {children}
     </div>
   );

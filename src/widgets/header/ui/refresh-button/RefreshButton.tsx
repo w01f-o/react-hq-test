@@ -7,8 +7,8 @@ export const RefreshButton: FC = () => {
     <Button title="Refresh" aria-label="Refresh" variant="light">
       <RefreshCcw
         className="-scale-x-100"
-        width={35}
-        height={35}
+        width={24}
+        height={24}
         strokeWidth={1}
       />
     </Button>

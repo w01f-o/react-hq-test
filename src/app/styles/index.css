@@ -16,9 +16,19 @@
 }
 
 body {
-  @apply bg-blue;
+  @apply bg-blue antialiased;
 }
 
 button {
   @apply cursor-pointer;
+}
+
+.chart-container {
+  max-height: 300px;
+}
+
+@media (max-height: 700px) {
+  .chart-container {
+    max-height: 135px;
+  }
 }

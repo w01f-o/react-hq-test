@@ -13,41 +13,12 @@ import {
 import './custom-legend.css';
 
 const legend = ['22.04', '23.04', '24.04', '25.04', '26.04'];
-const initialChardValue = [
-  { value: 60 },
-  { value: 60 },
-  { value: 57 },
-  { value: 58 },
-  { value: 37 },
-  { value: 39 },
-  { value: 37 },
-  { value: 55 },
-  { value: 60 },
-  { value: 50 },
-  { value: 45 },
-  { value: 40 },
-  { value: 43 },
-  { value: 42 },
-  { value: 50 },
-  { value: 58 },
-  { value: 60 },
-  { value: 55 },
-  { value: 58 },
-  { value: 40 },
-  { value: 39 },
-  { value: 35 },
-  { value: 58 },
-  { value: 65 },
-  { value: 55 },
-  { value: 55 },
-  { value: 55 },
-  { value: 55 },
-];
 
 export const TradingChart: FC = () => {
   const currentBot = useBots(state => state.currentBot);
-  const [chartValue, setChartValue] =
-    useState<{ value: number }[]>(initialChardValue);
+  const [chartValue, setChartValue] = useState<{ value: number }[]>(
+    Array.from({ length: 30 }, (_, i) => ({ value: i }))
+  );
 
   useEffect(() => {
     setChartValue(prev =>
@@ -59,7 +30,7 @@ export const TradingChart: FC = () => {
 
   return (
     <div className="relative flex flex-grow items-center overflow-hidden py-2">
-      <ResponsiveContainer className="max-h-[300px] scale-110">
+      <ResponsiveContainer className="chart-container scale-110">
         <ComposedChart data={chartValue}>
           <CartesianGrid
             strokeDasharray="3 3"
@@ -69,7 +40,7 @@ export const TradingChart: FC = () => {
             payload={legend.map(d => ({ name: d, value: d }))}
             iconSize={0}
             wrapperStyle={{
-              fontSize: 14,
+              fontSize: 12,
               opacity: 0.5,
             }}
           />
@@ -95,7 +66,7 @@ export const TradingChart: FC = () => {
           </defs>
         </ComposedChart>
       </ResponsiveContainer>
-      <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl font-semibold min-[410px]:text-4xl">
         <Profitability
           bot={botData.bots.find(bot => bot.name === currentBot)!}
         />

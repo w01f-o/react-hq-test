@@ -7,7 +7,7 @@ export const TradingInfo: FC = () => {
     <div className="px-6 uppercase">
       <div className="text-sm font-semibold opacity-50">Trading capital</div>
       <div className="flex items-center justify-between">
-        <div className="text-[42px] leading-none uppercase">
+        <div className="text-[32px] leading-none uppercase min-[380px]:text-4xl min-[410px]:text-[42px]">
           {botData.trading_capital} {botData.trading_capital_currency}
         </div>
         <div className="text-sm font-semibold">
